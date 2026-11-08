@@ -113,10 +113,11 @@ ADV = _w("""
 # dominant reading belongs to another class (time nouns, postpositions, determiners)
 ADV -= _w("""دن رات سال شام صبح طور وقت حال بس آپ ساتھ قبل نہ کہ ہر ہمہ بھر جل مل ازیں فی الوقت الحقیقت
 الواقع حتی الامکان باری بیک چپ چاپ کھلم کھلا سامنے آمنے رفتہ دھیرے سیدھا الٹا ابتداً تقریباً جبراً""")
-ADV |= _w("ابتدا جبرا")
+ADV |= _w("ابتدا جبرا نہ واپس ناگہاں یکسر بالفرض اندرون بیرون")
 ADJ -= _w("صحت مند نقصان دہ ذمہ دار پیمانے تر ترین تجربہ کار پیشہ ور کل")
-ADJ |= _w("صحتمند ذمہدار بیشتر")
+ADJ |= _w("صحتمند ذمہدار بیشتر سارا پورا غیر تیار شامل جاری متاثر سالہ نما")
 CONJ -= _w("کہیں نہ")
+POST |= _w("سامنے فی")
 
 # ---------------------------------------------------------------- verbs: hand-picked roots + paradigm
 VERB_ROOTS_LEX = _w("""
@@ -138,7 +139,7 @@ VERB_IRREGULAR = _w("""
 _CONSONANT_SUFFIXES = ["نا", "نے", "نی", "تا", "تی", "تے", "تیں", "ا", "ی", "ے", "یں", "و", "وں"]
 _VOWEL_SUFFIXES = ["نا", "نے", "نی", "تا", "تی", "تے", "تیں", "یا", "ئی", "ئے", "ئیں", "ؤ", "ؤں"]
 # generated strings that collide with frequent words of another class are dropped
-_VERB_BLOCK = _w("کی کے لیے لئے سنی کہ کو جانی ملی بنی بسی سوا بچے بچی بسا دکھ مانی جانا بنا جاتی")
+_VERB_BLOCK = _w("کی کے لیے لئے سنی کہ کو جانی ملی بنی بسی سوا بچے بچی بسا دکھ مانی جانا بنا جاتی گاؤں گاؤ")
 
 
 def _inflect(root):
@@ -150,7 +151,7 @@ VERB = set(VERB_IRREGULAR)
 for _root in VERB_ROOTS_LEX:
     VERB |= _inflect(_root)
 VERB -= _VERB_BLOCK
-VERB |= _w("جانا بنا جاتی")  # keep the common verb readings of these
+VERB |= _w("جانا بنا جاتی جات")  # keep the common verb readings; جات = جاتی after the A1 stemmer
 VERB -= POST | CONJ | PRON
 
 # ---------------------------------------------------------------- suffix rules (used when no lexicon hit)
