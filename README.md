@@ -1,5 +1,7 @@
 # i25-8023 NLP Assignment 2: Neural NLP Pipeline for BBC Urdu
 
+Repository: https://github.com/ValeenaAfzal/i25-8023-NLP-Assignment2
+
 DS 5007 Natural Language Processing, Assignment 2 (section DS-A). This continues the Assignment 1 BBC Urdu
 pipeline: word embeddings (TF-IDF, PPMI, Skip-gram Word2Vec), BiLSTM sequence labelling (POS with softmax, NER
 with CRF + Viterbi) and a Transformer encoder for topic classification. Everything is written from scratch in
