@@ -7,7 +7,6 @@ pipeline: word embeddings (TF-IDF, PPMI, Skip-gram Word2Vec), BiLSTM sequence la
 with CRF + Viterbi) and a Transformer encoder for topic classification. Everything is written from scratch in
 PyTorch: no pretrained models, no Gensim, no HuggingFace, and no `nn.Transformer`, `nn.MultiheadAttention` or
 `nn.TransformerEncoder`.
-
 ## Layout
 
 ```
